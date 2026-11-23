@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Empleo Dev — Bogotá / Remoto · 16 nov 2026</title>
+<title>Empleo Dev — Bogotá / Remoto · 23 nov 2026</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><rect width='8' height='8' fill='black'/><rect x='2' y='2' width='4' height='4' fill='white'/><rect x='3' y='3' width='2' height='2' fill='black'/></svg>">
 <style>
 @font-face{font-family:'Geist';src:url('https://cdn.jsdelivr.net/npm/geist@1.4.2/dist/fonts/geist-sans/Geist-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
@@ -47,10 +47,10 @@ footer a{color:var(--fg)}
 <body>
 <div class="wrap">
 <header><div class="px"></div><h1>empleo-dev / bogotá-remoto</h1></header>
-<p class="sub">14 ofertas · 16 nov 2026 · junior → senior · <code>sin SENA / sin pasantías</code></p>
+<p class="sub">12 ofertas · 23 nov 2026 · junior → senior · <code>sin SENA / sin pasantías</code></p>
 <div class="filters">
 <input id="q" type="search" placeholder="Buscar: java, react, n8n, remoto…" autocomplete="off">
-<select id="fFuente"><option value="">Fuente: todas</option><option>elempleo</option><option>GetOnBrd</option><option>Computrabajo</option><option>LinkedIn</option><option>Arc.dev</option><option>WeRemoto</option></select>
+<select id="fFuente"><option value="">Fuente: todas</option><option>elempleo</option><option>GetOnBrd</option><option>Computrabajo</option><option>LinkedIn</option><option>Arc.dev</option><option>WeRemoto</option><option>Torre</option></select>
 <select id="fMod"><option value="">Modalidad: todas</option><option>Bogotá</option><option>Híbrido</option><option>Remoto</option></select>
 <select id="fNiv"><option value="">Nivel: todos</option><option value="junior">Junior</option><option value="semi">Semi-senior</option><option value="senior">Senior</option></select>
 <select id="fOrd"><option value="rel">Orden: relevancia</option><option value="sal">Salario ↓</option></select>
@@ -58,24 +58,22 @@ footer a{color:var(--fg)}
 <div class="count" id="count"></div>
 <div id="list"></div>
 <div class="empty" id="empty">∅ sin resultados — ajusta los filtros</div>
-<footer>Fuentes: elempleo · GetOnBrd · Computrabajo · LinkedIn · Arc.dev · WeRemoto — Hecho para <a href="https://dilan-albert-murcia-parra.netlify.app/es/">dilan-albert-murcia-parra.netlify.app/es</a></footer>
+<footer>Fuentes: elempleo · GetOnBrd · Computrabajo · LinkedIn · Arc.dev · WeRemoto · Torre — Hecho para <a href="https://dilan-albert-murcia-parra.netlify.app/es/">dilan-albert-murcia-parra.netlify.app/es</a></footer>
 </div>
 <script>
 const JOBS=[
-{t:"Desarrollador Full Stack (React + Node/Java)",e:"Empresa confidencial",m:"Remoto",c:"Indefinido",s:"$5.414.000",u:"https://www.elempleo.com/co/ofertas-trabajo/desarrollador-full-stack-1886793983",f:"elempleo",n:"semi",w:"React + TypeScript con backend Node/Java y PostgreSQL, tu perfil fullstack directo."},
-{t:"Desarrollador Fullstack Senior (.NET + React)",e:"Empresa confidencial",m:"Remoto",c:"Indefinido",s:"$7.074.000",u:"https://www.elempleo.com/co/ofertas-trabajo/desarrollador-fullstack-1886790472",f:"elempleo",n:"senior",w:"React + Node/Express + Docker + CI/CD remoto con el salario alto de la tanda."},
-{t:"Desarrollador Backend Java (Spring Boot)",e:"Zemsania Colombia",m:"Hibrido",c:"Indefinido",s:"$6-8M",u:"https://www.elempleo.com/co/ofertas-trabajo/desarrollador-backend-java-1886792088",f:"elempleo",n:"semi",w:"Java 17/21 + Spring Boot + Docker en Bogotá híbrida, tu núcleo WhisWhim."},
-{t:"Desarrollador Backend remoto (Java/Spring/Node)",e:"Mainsoft LTDA",m:"Remoto",c:"Obra o labor",s:"",u:"https://co.computrabajo.com/ofertas-de-trabajo/oferta-de-trabajo-de-desarrollador-backend-remoto-remoto-en-bogota-dc-3E19D0C23A4650BA61373E686DCF3405",f:"Computrabajo",n:"semi",w:"Java + Spring Boot + microservicios + Node/NestJS, calco de tu stack."},
-{t:"Desarrollador Frontend React Bilingüe",e:"PeakU",m:"Remoto",c:"Prestación de servicios",s:"$6-8M",u:"https://co.computrabajo.com/ofertas-de-trabajo/oferta-de-trabajo-de-desarrollador-frontend-react-bilingue-62890-remoto-en-bogota-dc-D0BB88A6211CAF7C61373E686DCF3405",f:"Computrabajo",n:"semi",w:"React + Node + SQL remoto con inglés avanzado, tu pata frontend."},
-{t:"Desarrollador Web Angular remoto",e:"Zemsania Colombia",m:"Remoto",c:"Obra o labor",s:"",u:"https://co.computrabajo.com/ofertas-de-trabajo/oferta-de-trabajo-de-desarrollador-web-angular-remoto-en-bogota-dc-BFA01A6B45CB5D8161373E686DCF3405",f:"Computrabajo",n:"senior",w:"Angular 18 + TypeScript + Node + APIs REST, frontend sólido remoto."},
-{t:"Full-Stack Developer (React + TypeScript)",e:"ZipISA",m:"Remoto",c:"Full-time",s:"USD 2200-3500/mes",u:"https://www.getonbrd.com/empleos/programacion/full-stack-developer-zipisa-remote",f:"GetOnBrd",n:"semi",w:"React + TypeScript + APIs + Docker/Cloud Run, la más alineada en USD."},
-{t:"Web App Full-Stack Engineer",e:"Niuro",m:"Remoto",c:"Full-time",s:"",u:"https://www.getonbrd.com/jobs/programming/web-app-full-stack-engineer-niuro-remote-03c6",f:"GetOnBrd",n:"senior",w:"Fullstack senior con APIs y despliegue más IA/LLMs, afín a tu línea n8n."},
-{t:"Full-Stack Software Engineer (React + Python)",e:"Improving",m:"Remoto",c:"Full-time",s:"",u:"https://www.getonbrd.com/jobs/programming/full-stack-software-engineer-react-python-improving-remote",f:"GetOnBrd",n:"semi",w:"React + APIs + Azure DevOps remoto con bonos y revisiones salariales."},
-{t:"DevOps Engineer (Docker + AWS + K8s)",e:"Improving",m:"Remoto",c:"Full-time",s:"",u:"https://www.getonbrd.com/jobs/sysadmin-devops-qa/devops-engineer-improving-remote",f:"GetOnBrd",n:"senior",w:"Docker + AWS + Kubernetes + Terraform, tu pata DevOps de Docker."},
-{t:"Senior Full Stack Engineer (Node/React)",e:"Kake",m:"Remoto",c:"Contract",s:"USD",u:"https://arc.dev/remote-jobs/j/kake-senior-full-stack-engineer-node-react-remote-plre8kusuu",f:"Arc.dev",n:"senior",w:"Node + React + REST/GraphQL + SQL en contrato remoto USD."},
-{t:"Full-Stack Developer",e:"Pavago",m:"Remoto",c:"Full-time",s:"",u:"https://www.weremoto.com/job-posts/id-full-stack-developer-pavago",f:"WeRemoto",n:"semi",w:"Fullstack end-to-end con bases de datos, perfil generalista como el tuyo."},
-{t:"Fullstack Software Engineer (Java + React)",e:"Clara",m:"Hibrido",c:"Tiempo completo",s:"",u:"https://claracareers.com/jobs/5204917007/fullstack-software-engineer-bogota-cun-colombia",f:"LinkedIn",n:"semi",w:"Java + Spring Boot + React + PostgreSQL + Kafka en Bogotá, calco total."},
-{t:"Senior Java Full Stack Engineer with React",e:"EPAM Systems",m:"Remoto",c:"Tiempo completo",s:"",u:"https://www.linkedin.com/jobs/view/senior-java-full-stack-engineer-with-react-at-epam-systems-4417090261",f:"LinkedIn",n:"senior",w:"Java + Spring Boot + React + PostgreSQL + CI/CD con inglés B2."}
+{t:"Full-Stack Developer — AI Voice Agents",e:"PhoneNinjas AI",m:"Remoto",c:"Full-time",s:"USD 2800-3200/mes",u:"https://www.getonbrd.com/jobs/machine-learning-ai/full-stack-developer-ai-voice-agents-phoneninjas-ai-remote",f:"GetOnBrd",n:"semi",w:"PostgreSQL + REST + Pipedream automatizando agentes de voz IA, tu línea n8n/IA."},
+{t:"Full-Stack Developer — Python, React & AI Coding Tools",e:"Sagan Recruitment",m:"Remoto",c:"Full-time",s:"USD 4250-5000/mes",u:"https://www.weremoto.com/job-posts/id-full-stack-developer-python-react-ai-coding-tools-sagan-recruitment",f:"WeRemoto",n:"semi",w:"Python + TypeScript + React + SQL con agentes de código IA en producción."},
+{t:"Full Stack Developer (WordPress + Marketing Tech)",e:"Remote Talent Latam",m:"Remoto",c:"Full-time",s:"USD 3500/mes",u:"https://www.weremoto.com/job-posts/id-full-stack-developer-remote-talent-latam",f:"WeRemoto",n:"senior",w:"Fullstack + APIs + CRM + Git para agencia de EE. UU., perfil generalista como el tuyo."},
+{t:"Desarrollador FullStack Senior (Java + Spring Boot)",e:"ZEMSANIA COLOMBIA SAS",m:"Remoto",c:"Indefinido",s:"",u:"https://co.computrabajo.com/ofertas-de-trabajo/oferta-de-trabajo-de-desarrollador-fullstack-senior-remoto-en-bogota-dc-502CA922707E36A861373E686DCF3405",f:"Computrabajo",n:"senior",w:"Java + Spring Boot + REST + inglés, remoto e indefinido para tu núcleo backend."},
+{t:"Desarrollador Backend Java + Spring Boot",e:"Importante empresa del sector",m:"Hibrido",c:"Indefinido",s:"$5.000.000",u:"https://co.computrabajo.com/ofertas-de-trabajo/oferta-de-trabajo-de-desarrollador-backend-java-spring-boot-en-bogota-dc-0E732AE2332A235761373E686DCF3405",f:"Computrabajo",n:"semi",w:"Java + Spring Boot + GraphQL en Bogotá híbrida, calco de tu backend WhisWhim."},
+{t:"Backend Developer Tecnologías ASO y APX",e:"Accenture LTDA",m:"Hibrido",c:"Indefinido",s:"",u:"https://co.computrabajo.com/ofertas-de-trabajo/oferta-de-trabajo-de-backend-developer-tecnologias-aso-y-apx-en-bogota-dc-A926E2B8A873149061373E686DCF3405",f:"Computrabajo",n:"semi",w:"Spring Boot + Batch + JUnit + Jenkins con contrato indefinido en Bogotá."},
+{t:"Convocatoria Desarrolladores Talento TI (Java/.NET/React)",e:"Colsubsidio - Empleo y Talento TI",m:"Bogota",c:"Indefinido",s:"",u:"https://agenciadeempleodecolsubsidio.pandape.computrabajo.com/Detail/14192194",f:"Computrabajo",n:"junior",w:"50 vacantes Java/Spring + React + SQL + Docker desde 1 año, bolsa ideal para ti."},
+{t:"Desarrollador Full Stack (Node + React + TS)",e:"Melonn",m:"Remoto",c:"Indefinido",s:"$5-13M",u:"https://torre.ai/post/lr4LDq3r-melonn-desarrollador-full-stack-12",f:"Torre",n:"semi",w:"Node + React + TypeScript + SQL remoto con prestaciones de ley en Colombia."},
+{t:"Full-Stack Web Developer",e:"TourScale",m:"Remoto",c:"Full-time",s:"USD 1400-2000/mes",u:"https://torre.ai/post/jw0zDo6r-tourscale-full-stack-web-developer",f:"Torre",n:"semi",w:"Web + Vercel + sistemas internos con flujos asistidos por IA, 100% remoto."},
+{t:"Full-Stack Developer (React + NestJS + Mongo)",e:"Agencia digital EE. UU. (Torre)",m:"Hibrido",c:"Freelance",s:"",u:"https://torre.ai/post/kWRgY77w-full-stack-developer-1858",f:"Torre",n:"semi",w:"React + NestJS + Docker + AWS con inglés B2, solo Bogotá e inicio inmediato."},
+{t:"Desarrollador Java (sector financiero)",e:"SII Group Colombia",m:"Hibrido",c:"Indefinido",s:"",u:"https://www.linkedin.com/jobs/view/4464626167",f:"LinkedIn",n:"junior",w:"Java + Spring Boot + PostgreSQL + Git híbrido Bogotá desde 1 año de experiencia."},
+{t:"Desarrollador/a Full-Stack & IA (LLMs + agentes + RAG)",e:"Empresa confidencial",m:"Hibrido",c:"Prestación de servicios",s:"$6-10M",u:"https://www.elempleo.com/co/ofertas-empleo/trabajo-desarrollador-fullstack",f:"elempleo",n:"semi",w:"Fullstack Python/Node + React + LLMs y MCPs en Bogotá, la más afín a tu línea IA."}
 ];
 function salVal(s){const m=String(s||"").match(/\$([\d.,]+)/);if(!m)return -1;return parseFloat(m[1].replace(",","."));}
 function render(){
